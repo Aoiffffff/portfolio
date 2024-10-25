@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- iOS Safariの電話番号対策 -->
+    <meta name="format-detection" content="telephone=no">
+    <!-- インデックス登録させたくない場合のみ -->
+    <meta name="robots" content="noindex,nofollow">
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- reset.css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- custom.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- javascript -->
+    <script src="js/script.js" defer></script>
+    <title>Aoi Fujishima Portfolio Site</title>
+    <link rel="icon" href="images/favicon.ico" id="favicon">
+</head>
+
+<body>
+    <!-- Loading画面のHTML -->
+    <div id="loading-screen">
+        <div id="ui">
+            <div class="dice">
+                <ol class="dice_list">
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                </ol>
+            </div>
+            <div class="dice">
+                <ol class="dice_list">
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                </ol>
+            </div>
+            <div class="dice">
+                <ol class="dice_list">
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                    <li class="dice_list_item"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div id="nav">
+            <div class="hamburger" id="hamburger">
+                &#9776; <!-- ハンバーガーメニューアイコン -->
+            </div>
+            <ul id="menu">
+                <li><a href="index.html" class="text_cap">home</a></li>
+                <li><a href="profile.html" class="text_cap">profile</a></li>
+                <li><a href="works.html" class="text_cap">works</a></li>
+                <li><a href="#contact" class="text_cap">contact</a></li>
+            </ul>
+        </div>
+
+        <div id="top">
+            <!-- <h1><span class="name">Aoi Fujishima</span><br> Portfolio Site</h1> -->
+            <div class="top-ttl">
+                <div class="textanimation">Aoi　Fujishima</div>
+                <div class="textanimation">Portfolio　Site</div>
+            </div>
+            <img src="images/pcmain.jpg" alt="" width="1366" height="768">
+        </div>
+    </header>
+
+    <div id="wrap">
+        <main>
+            <section id="works">
+                <h2 class="text_cap">works</h2>
+                <div id="wks">
+                    <div id="wrapper">
+                        <div id="img_box"><a href="works1.html"><img src="images/nakatsu.svg" alt="架空の中津モーターズ株式会社サイトリンク"
+                                    loading="lazy" width="1000" height="800"></a></div>
+                        <p>【架空】中津モーターズ株式会社</p>
+                        <p>direction/design/cording</p>
+                    </div>
+                    <div id="wrapper">
+                        <div id="img_box"><a href="works2.html"><img src="images/portfoliosite.svg" alt="" loading="lazy"
+                                    width="1000" height="800"></a></div>
+                        <p>ポートフォリオサイト</p>
+                        <p>direction/design/cording</p>
+                    </div>
+                    <div id="wrapper">
+                        <div id="img_box"><a href="#"><img src="images/card_design.png" alt="" loading="lazy"
+                                    width="1000" height="1000"></a></div>
+                        <p>名刺</p>
+                        <p>direction/design</p>
+                    </div>
+                    <div id="wrapper">
+                        <div id="img_box"><a href="#"><img src="images/limited.svg" alt="" loading="lazy" width="336"
+                                    height="280"></a></div>
+                        <p>期間限定メニュー　バナー</p>
+                        <p>design</p>
+                    </div>
+                </div>
+            </section>
+            <section id="skills">
+                <h2 class="text_cap">skills</h2>
+                <div id="skl">
+                    <div id="container">
+                        <img src="images/skills_htmlcss.png" loading="lazy" alt="HTML/CSSのロゴ" width="500" height="500">
+                        <h4>HTML/CSS</h4>
+                        <p>基本的なコーディングが可能です。<br>できるだけコメントを残したり、区切りをつけたりしてメンテナンスのしやすさを心掛けています。</p>
+                    </div>
+                    <div id="container">
+                        <img src="images/skills_javascript.png" loading="lazy" alt="Javascriptのロゴ" width="500"
+                            height="500">
+                        <h4>Javascript</h4>
+                        <p>簡単なアニメーションや機能を実装可能です。<br>まだまだ勉強中。<br>
+                            調べながら試行錯誤し実装しています。</p>
+                    </div>
+                    <div id="container">
+                        <img src="images/skills_graphic.png" loading="lazy" alt="グラフィックデザインに使っているソフト4つ" width="500"
+                            height="500">
+                        <h4>Photoshop/illustrator</h4>
+                        <p>バナー作成やデザインカンプ作成時に使用しています。<br>いずれも基本的な操作は可能です。</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div id="contact">
+            <h2 class="text_cap">contact</h2>
+            <p>bg118045@sun.ac.jpg</p>
+        </div>
+    </footer>
+    <script>
+        window.onload = function () {
+            // loading画面を隠す
+            document.getElementById('loading-screen').style.display = 'none';
+            // メインコンテンツを表示する
+            document.getElementById('wrap').style.display = 'block';
+        };
+    </script>
+</body>
+
+</html>
