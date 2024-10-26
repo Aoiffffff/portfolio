@@ -31,6 +31,20 @@ h2 {
   margin: 0 10%;
 }
 
+.slide-in-left, .slide-in-right {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-left {
+  transform: translateX(-30px); /* 左からスライドイン */
+}
+
+.slide-in-right {
+  transform: translateX(30px); /* 右からスライドイン */
+}
+
+
 /* ----------------------------------------------------
 loading
 ----------------------------------------------------- */
@@ -40,7 +54,7 @@ loading
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #007565;
+  background-color: #007655;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -321,7 +335,7 @@ nav
   display: none; /* 768px以上では非表示 */
   font-size: 2rem;
   color: #003E2D;
-  padding: 1rem;
+  padding: 0.5rem 0.7rem 0.7rem 0.7rem;
   z-index: 1001;
   position: fixed;
   right: 1rem;
@@ -371,7 +385,7 @@ nav
     width: 100%;
     border-bottom: 2px solid #ffffff;
   }
-}
+
 
 /* フェードインアニメーション */
 @keyframes fadeIn {
@@ -381,6 +395,7 @@ nav
   to {
     opacity: 1;
   }
+}
 }
 
 /* ----------------------------------------------------
@@ -393,7 +408,7 @@ header img {
 }
 
 #top {
-  position: relative; /* 親要素を相対的に配置 */
+  position: relative;
 }
 
 .top-ttl{
@@ -437,6 +452,11 @@ overflow: hidden;
 animation: showTextFromBottom 0.5s backwards;
 }
 
+@media screen and (max-width: 768px) {
+  .top-ttl{
+    left: 45%;          /* 画像の横中央に配置 */
+  }
+}
 
 /* ----------------------------------------------------
 Works
@@ -447,29 +467,74 @@ Works
 }
 
 
-#wrapper {
+.wrapper {
   text-align: center;
   width: 50%;
   padding: 5%;
 }
 
-#img_box {
+.img_box {
   cursor: pointer;
   max-width: 500px;
   overflow: hidden;
   width: 100%;
 }
 
-#wrapper img {
+.wrapper img {
   margin-bottom: 5%;
   width: 500px;
   height: auto;
   object-fit: contain;
 }
 
-#wrapper img:hover {
+.wrapper img:hover {
   transform:scale(1.1);
   transition:1s all;
+}
+
+/*矢印（右に移動して背景がつく）*/
+.arrowbtn-3 a{
+	--arrow-color: #333;
+	position: relative;
+	border: 1px solid var(--arrow-color);
+	color: var(--arrow-color);
+	text-decoration: none;
+	padding: 8px 30px;
+	display: inline-block;
+	text-align: center;
+	transition: all .2s linear;
+}
+
+.arrowbtn-3 {
+  margin-right: 10%;
+  margin-top: 10%;
+  display: block;
+    margin-left: auto;
+    width: fit-content; /* 必要に応じて追加 */
+}
+
+
+.arrowbtn-3 a:hover{
+	background:#007655;
+	color:#fff;
+}
+
+.arrowbtn-3 a::before {
+	border-bottom: 1px solid var(--arrow-color);
+	border-right: 1px solid var(--arrow-color);
+	content: '';
+	height: 10px;
+	position: absolute;
+	top:calc(50% - 10px);
+	right:-20px;
+	transform: skewX(50deg);
+	width:40px;
+	transition: all .3s; /*なめらかな動き*/
+}
+
+/*hoverした際の移動*/
+.arrowbtn-3 a:hover::before {
+	right:-25px;
 }
 
 @media screen and (max-width: 768px) {
@@ -477,10 +542,9 @@ Works
     display: block;
   }
 
-  #wrapper {
+  .wrapper {
     width: 100%;
     height: auto;
-    
   }
 }
 
@@ -493,13 +557,13 @@ Skills
 }
 
 /* 横並び */
-#skl {
+.skl {
   display: flex;
   justify-content: space-between; /* 均等にスペースを入れる */
   gap: 5%;
 }
 
-#container {
+.container {
   flex: 1 1 calc(100% / 3); /* 3分割 */
   padding: 10px; /* 内側に余白をつける */
   text-align: center; /* 中央揃え */
@@ -509,7 +573,7 @@ border-radius: 10px;
 }
 
 /* 画像の大きさを統一する */
-#container img {
+.container img {
   width: 100%; /* 親要素の幅に合わせて拡大縮小 */
   max-width: 250px;
   height: auto;
@@ -517,7 +581,7 @@ border-radius: 10px;
   margin: 0 auto; /* 画像を中央に配置 */
 }
 
-#container p {
+.container p {
   text-align: left;
   margin: 3% 0;
   word-wrap: break-word; /* テキストがはみ出さないように自動で改行 */
@@ -526,6 +590,15 @@ border-radius: 10px;
   line-height: 1.5rem;
 }
 
+@media screen and (max-width: 768px) {
+  .skl {
+    display: block;
+  }
+
+  .container {
+    margin: 20% 5%;
+  }
+}
 /* ----------------------------------------------------
 contact
 ----------------------------------------------------- */
@@ -534,6 +607,7 @@ footer {
   height: 30vh;
   background-color: #007655;
   color: #ffffff;
+  margin-top: 5%;
 }
 
 footer p {
@@ -544,5 +618,11 @@ footer p {
 footer h2 {
   margin-bottom: 1%;
   border-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    height: 10vh;
+  }
 }
 
