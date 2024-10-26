@@ -53,11 +53,8 @@ for (let i = 0; i < animationTargetElements.length; i++) {
     }
 }
 
-
 // 一つずつ現れるアニメーション
 document.addEventListener("DOMContentLoaded", function () {
-    const wrappers = document.querySelectorAll('#wrapper');
-    const container = document.querySelector('#container');
     const garallies = document.querySelectorAll('.garally');
 
     const options = {
@@ -74,21 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, options);
 
-    // #wrapper にアニメーションを設定
-    wrappers.forEach(wrapper => {
-        wrapper.style.opacity = 0;
-        wrapper.style.transform = "translateX(-30px)"; // 左からスライドイン
-        wrapper.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-        observer.observe(wrapper);
-    });
-
-    // #container にアニメーションを設定
-    if (container) {
-        container.style.opacity = 0;
-        container.style.transform = "translateX(-50px)"; // 左からスライドイン
-        container.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-        observer.observe(container);
-    }
     // .garally にアニメーションを順番に設定
     garallies.forEach((garally, index) => {
         garally.style.opacity = 0;
@@ -129,5 +111,21 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(work);
     });
 });
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateX(0)";
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 }); // optionsで適切な閾値を設定
+
+// スライドイン対象の要素を取得して監視
+document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(element => {
+    observer.observe(element);
+});
+
 
 
