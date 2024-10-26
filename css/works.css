@@ -1,0 +1,642 @@
+/* ----------------------------------------------------
+共通
+----------------------------------------------------- */
+body {
+  background-color: #00765511;
+  color: #003E2D;
+  font-family: "Zen Old Mincho", serif;
+  font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 頭文字大きく */
+.text_cap {
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: clamp(1.438rem, 0.938rem + 2.5vw, 2.813rem);
+  border-bottom: 1px solid #003E2D;
+  margin: 5% 0;
+  text-indent: 1rem;
+}
+
+#wrap,
+#contact {
+  margin: 0 10%;
+}
+
+.slide-in-left, .slide-in-right {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-left {
+  transform: translateX(-30px); /* 左からスライドイン */
+}
+
+.slide-in-right {
+  transform: translateX(30px); /* 右からスライドイン */
+}
+
+/* ----------------------------------------------------
+loading
+----------------------------------------------------- */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #007655;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+li {
+  list-style-type: none;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+#ui {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  perspective: 600px;
+}
+
+#ui .dice {
+  transform-style: preserve-3d;
+}
+
+#ui .dice:nth-child(1) {
+  -webkit-animation: rotate1 20000ms linear infinite;
+  animation: rotate1 20000ms linear infinite;
+}
+
+#ui .dice:nth-child(2) {
+  -webkit-animation: rotate2 20000ms linear infinite;
+  animation: rotate2 20000ms linear infinite;
+}
+
+#ui .dice:nth-child(3) {
+  -webkit-animation: rotate3 20000ms linear infinite;
+  animation: rotate3 20000ms linear infinite;
+}
+
+#ui .dice_list {
+  transform-style: preserve-3d;
+  transform: translateY(-75px) translateX(-75px);
+}
+
+#ui .dice_list_item {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+#ui .dice_list_item:nth-child(1) {
+  background: rgba(153, 252, 254, 0.5);
+  -webkit-animation: child1 3000ms ease-in-out infinite alternate;
+  animation: child1 3000ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes child1 {
+  0% {
+    transform: translateZ(75px);
+  }
+
+  100% {
+    transform: translateZ(-75px);
+  }
+}
+
+@keyframes child1 {
+  0% {
+    transform: translateZ(75px);
+  }
+
+  100% {
+    transform: translateZ(-75px);
+  }
+}
+
+#ui .dice_list_item:nth-child(2) {
+  background: rgba(232, 104, 225, 0.5);
+  -webkit-animation: child2 3000ms ease-in-out infinite alternate;
+  animation: child2 3000ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes child2 {
+  0% {
+    transform: translateY(75px) rotateX(270deg);
+  }
+
+  100% {
+    transform: translateY(-75px) rotateX(270deg);
+  }
+}
+
+@keyframes child2 {
+  0% {
+    transform: translateY(75px) rotateX(270deg);
+  }
+
+  100% {
+    transform: translateY(-75px) rotateX(270deg);
+  }
+}
+
+#ui .dice_list_item:nth-child(3) {
+  background: rgba(185, 173, 138, 0.5);
+  -webkit-animation: child3 3000ms ease-in-out infinite alternate;
+  animation: child3 3000ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes child3 {
+  0% {
+    transform: translateX(75px) rotateY(-270deg);
+  }
+
+  100% {
+    transform: translateX(-75px) rotateY(-270deg);
+  }
+}
+
+@keyframes child3 {
+  0% {
+    transform: translateX(75px) rotateY(-270deg);
+  }
+
+  100% {
+    transform: translateX(-75px) rotateY(-270deg);
+  }
+}
+
+#ui .dice_list_item:nth-child(4) {
+  background: rgba(102, 190, 232, 0.5);
+  -webkit-animation: child4 3000ms ease-in-out infinite alternate;
+  animation: child4 3000ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes child4 {
+  0% {
+    transform: translateX(-75px) rotateY(-90deg);
+  }
+
+  100% {
+    transform: translateX(75px) rotateY(-90deg);
+  }
+}
+
+@keyframes child4 {
+  0% {
+    transform: translateX(-75px) rotateY(-90deg);
+  }
+
+  100% {
+    transform: translateX(75px) rotateY(-90deg);
+  }
+}
+
+#ui .dice_list_item:nth-child(5) {
+  background: rgba(33, 64, 228, 0.5);
+  -webkit-animation: child5 3000ms ease-in-out infinite alternate;
+  animation: child5 3000ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes child5 {
+  0% {
+    transform: translateY(-75px) rotateX(90deg);
+  }
+
+  100% {
+    transform: translateY(75px) rotateX(90deg);
+  }
+}
+
+@keyframes child5 {
+  0% {
+    transform: translateY(-75px) rotateX(90deg);
+  }
+
+  100% {
+    transform: translateY(75px) rotateX(90deg);
+  }
+}
+
+#ui .dice_list_item:nth-child(6) {
+  background: rgba(23, 1, 98, 0.5);
+  -webkit-animation: child6 3000ms ease-in-out infinite alternate;
+  animation: child6 3000ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes child6 {
+  0% {
+    transform: translateZ(-75px) rotateY(180deg);
+  }
+
+  100% {
+    transform: translateZ(75px) rotateY(180deg);
+  }
+}
+
+@keyframes child6 {
+  0% {
+    transform: translateZ(-75px) rotateY(180deg);
+  }
+
+  100% {
+    transform: translateZ(75px) rotateY(180deg);
+  }
+}
+
+@-webkit-keyframes rotate1 {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(1080deg);
+  }
+}
+
+@keyframes rotate1 {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(1080deg);
+  }
+}
+
+@-webkit-keyframes rotate2 {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) scale3d(0.7, 0.7, 0.7);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(1080deg) scale3d(0.7, 0.7, 0.7);
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) scale3d(0.7, 0.7, 0.7);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(1080deg) scale3d(0.7, 0.7, 0.7);
+  }
+}
+
+@-webkit-keyframes rotate3 {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) scale3d(0.4, 0.4, 0.4);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(1080deg) scale3d(0.4, 0.4, 0.4);
+  }
+}
+
+@keyframes rotate3 {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) scale3d(0.4, 0.4, 0.4);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(1080deg) scale3d(0.4, 0.4, 0.4);
+  }
+}
+
+/* ----------------------------------------------------
+nav
+----------------------------------------------------- */
+/* ナビゲーションバーのデフォルトスタイル */
+#nav {
+  display: none;
+  background-color: #ffffffc7;
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  /* アニメーションを追加 */
+}
+
+/* hoverアニメーション */
+#nav a {
+  padding-bottom: 5px;
+  position: relative;
+}
+
+#nav a::before {
+  background: #007655;
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  transform: scale(0, 1);
+  transition: transform .3s;
+  transform-origin: center top;
+}
+
+#nav a:hover::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+/* 横並び、右寄せ */
+#menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* メニュー同士の間隔とる */
+#menu li {
+  margin: 2% 3%;
+}
+
+/* ハンバーガーメニューのスタイル */
+#hamburger {
+  display: none;
+  /* 768px以上では非表示 */
+  font-size: 2rem;
+  color: #003E2D;
+  padding: 0.5rem 0.7rem 0.7rem 0.7rem;
+  z-index: 1001;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  border-radius: 5px;
+  /* 四角の背景 */
+  transition: all 0.3s ease;
+  /* アニメーション */
+}
+
+/* 768px以下のレスポンシブデザイン */
+@media screen and (max-width: 768px) {
+
+  /* ナビゲーションバー非表示 */
+  #menu li {
+    display: none;
+  }
+
+  #nav {
+    display: block;
+    /* 768px以下では常に表示 */
+  }
+
+  #hamburger {
+    display: block;
+    /* ハンバーガーメニューアイコンを常に表示 */
+    background-color: #ffffffc7;
+    border-radius: 2px;
+  }
+
+  /* ハンバーガーメニューを開いたときのスタイル */
+  #nav.show ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    /* メニューがフェードインするアニメーション */
+  }
+
+  #nav.show li {
+    padding: 20px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    border-bottom: 2px solid #ffffff;
+  }
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ----------------------------------------------------
+contact
+----------------------------------------------------- */
+footer {
+  width: 100%;
+  height: 30vh;
+  background-color: #007655;
+  color: #ffffff;
+}
+
+footer p {
+  font-size: clamp(1.875rem, 1.648rem + 1.14vw, 2.5rem);
+  text-align: center;
+}
+
+footer h2 {
+  margin-bottom: 1%;
+  border-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    height: 10vh;
+  }
+}
+
+/* ----------------------------------------------------
+worksアニメーション
+----------------------------------------------------- */
+.txt {
+  display: flex;
+  overflow: hidden;
+}
+
+.txt span {
+  margin: 5% 0;
+  font-size: clamp(2.5rem, 1.818rem + 3.41vw, 4.375rem);
+  font-family: "Bodoni Moda", serif;
+  letter-spacing: -1px;
+
+  /* ここからアニメーション関係 */
+  transform: translateY(2em);
+  animation: textanimation 1s forwards;
+}
+
+/* 1文字目 */
+.txt span:nth-child(1) {
+  animation-delay: 0.1s
+}
+
+/* 2文字目 */
+.txt span:nth-child(2) {
+  animation-delay: 0.3s
+}
+
+/* 3文字目 */
+.txt span:nth-child(3) {
+  animation-delay: 0.5s
+}
+
+/* 4文字目 */
+.txt span:nth-child(4) {
+  animation-delay: 0.7s
+}
+
+/* 5文字目 */
+.txt span:nth-child(5) {
+  animation-delay: 0.9s
+}
+
+@keyframes textanimation {
+  0% {
+    transform: translateY(2em);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------------------------------
+splide
+----------------------------------------------------- */
+
+.sub {
+  font-size: clamp(0.5rem, 0.364rem + 0.68vw, 0.875rem);
+  text-align: left;
+  text-indent: 10%;
+  margin-bottom: 2%;
+}
+
+.title {
+  font-size: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
+  margin-bottom: 1.5%;
+  text-align: left;
+  text-indent: 10%;
+}
+
+.container {
+  margin: 0 5%;
+}
+
+.container ul {
+  display: block;
+}
+
+.container li {
+  display: flex;
+  margin: 5% 0;
+}
+
+.subheading {
+  width: 20%;
+  font-size: clamp(0.813rem, 0.676rem + 0.68vw, 1.188rem);
+  text-align: left;
+}
+
+.detail {
+  width: 80%;
+  display: flex;
+  text-align: left;
+}
+
+.introduce {
+  font-size: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
+  margin-top: 3%;
+}
+
+.splide__slide img {
+  width: 50%;
+  height: 40%;
+  object-fit: scale-down;
+}
+
+
+.splide__slide {
+  text-align: center;
+}
+
+/* ページネーション */
+.splide__pagination {
+  position: relative;
+  top: 10%;
+  text-align: center;
+  margin-top: 10px;
+  z-index: -1000;
+}
+
+.splide__slide a {
+  border-bottom: #003E2D 1px solid;
+  cursor: pointer;
+}
+
+.splide__slide a {
+  color: transparent;
+  background: linear-gradient(to right, #cdcdcd 50%, #003E2D 50%) 100%;
+  background-clip: text;
+  background-size: 200% 100%;
+  transition: background-position 0.3s;
+}
+
+.splide__slide a:hover {
+  background-position: 0 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+  .sub,
+  .title {
+    text-indent: 0;
+  }
+
+  .splide__pagination {
+    position: relative;
+    top: -10%;
+    text-align: center;
+    margin-top: 10px;
+    z-index: -1000;
+  }
+
+  .splide__track {
+    height: 80vh;
+  }
+
+  .splide__slide img {
+    width: 100%;
+    height: auto;
+    object-fit: scale-down;
+  }
+}
