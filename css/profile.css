@@ -1022,6 +1022,13 @@ footer p {
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  footer p {
+    height:10vh;
+    line-height: 10vh;
+  }
+}
+
 footer h2 {
   margin-bottom: 1%;
   border-bottom: 0;
