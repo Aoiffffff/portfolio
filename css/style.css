@@ -643,8 +643,9 @@ footer h2 {
 }
 
 @media screen and (max-width: 768px) {
-  footer {
-    height:20vh;
+  footer p {
+    height:10vh;
+    line-height: 10vh;
   }
 }
 
