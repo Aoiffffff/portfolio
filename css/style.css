@@ -435,10 +435,13 @@ header .pc {
 
 .textanimation{
   font-size: clamp(2.5rem, 1.136rem + 6.82vw, 6.25rem);
-  background: linear-gradient(90deg, #007655 0%, #ffffff 40%, #ffffff 80%);
+  /* background: linear-gradient(90deg, #007655 0%, #ffffff 40%, #ffffff 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);  */
+  /* background-color: #f3f3f3; */
+  color: #f3f3f3;
+  margin-bottom: 3%;
 }
 @keyframes showTextFromBottom{
 0% {
@@ -472,7 +475,7 @@ animation: showTextFromBottom 0.5s backwards;
 
   .mobile {
     display: block;
-   width:100%;
+    width: 100%;
     height: 100vh;
     object-fit: cover;
   }
@@ -624,7 +627,6 @@ contact
 ----------------------------------------------------- */
 footer {
   width: 100%;
-  height: 30vh;
   background-color: #007655;
   color: #ffffff;
   margin-top: 5%;
@@ -638,8 +640,9 @@ footer p {
 }
 
 footer h2 {
-  margin-bottom: 1%;
+  padding-top: 5%;
   border-bottom: 0;
+  border-bottom: 1px solid #ffffff;
 }
 
 @media screen and (max-width: 768px) {
