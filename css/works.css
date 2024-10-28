@@ -470,6 +470,12 @@ footer h2 {
   border-bottom: 0;
 }
 
+@media screen and (max-width: 768px) {
+  footer {
+    height: 10vh;
+  }
+}
+
 /* ----------------------------------------------------
 worksアニメーション
 ----------------------------------------------------- */
@@ -527,7 +533,7 @@ worksアニメーション
 /* ----------------------------------------------------
 splide
 ----------------------------------------------------- */
-
+/* 小タイトル */
 .sub {
   font-size: clamp(0.5rem, 0.364rem + 0.68vw, 0.875rem);
   text-align: left;
@@ -542,12 +548,14 @@ splide
   text-indent: 10%;
 }
 
-.container {
-  margin: 0 5%;
+.introduce {
+  font-size: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
+  margin-top: 3%;
 }
 
-.container ul {
-  display: block;
+/* 作品詳細 */
+.container {
+  margin: 0 5%;
 }
 
 .container li {
@@ -563,13 +571,8 @@ splide
 
 .detail {
   width: 80%;
-  display: flex;
+  /* display: flex; */
   text-align: left;
-}
-
-.introduce {
-  font-size: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
-  margin-top: 3%;
 }
 
 .splide__slide img {
@@ -577,7 +580,6 @@ splide
   height: 40%;
   object-fit: scale-down;
 }
-
 
 .splide__slide {
   text-align: center;
@@ -592,12 +594,12 @@ splide
   z-index: -1000;
 }
 
-.splide__slide a {
+.splide__slide .container a {
   border-bottom: #003E2D 1px solid;
   cursor: pointer;
 }
 
-.splide__slide a {
+.splide__slide  a {
   color: transparent;
   background: linear-gradient(to right, #cdcdcd 50%, #003E2D 50%) 100%;
   background-clip: text;
@@ -632,5 +634,13 @@ splide
     width: 100%;
     height: auto;
     object-fit: scale-down;
+  }
+
+  .container li {
+    display: block;
+  }
+
+  .subheading, .detail {
+    width: 100%;
   }
 }
