@@ -406,10 +406,14 @@ nav
 /* ----------------------------------------------------
 メイン写真
 ----------------------------------------------------- */
-header img {
+header .pc {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.mobile {
+  display: none;
 }
 
 #top {
@@ -460,6 +464,17 @@ animation: showTextFromBottom 0.5s backwards;
 @media screen and (max-width: 768px) {
   .top-ttl{
     left: 45%;
+  }
+
+  .pc  {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
   }
 }
 
