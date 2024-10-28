@@ -472,7 +472,7 @@ animation: showTextFromBottom 0.5s backwards;
 
   .mobile {
     display: block;
-    max-width: 768px;
+   width:100%;
     height: 100vh;
     object-fit: cover;
   }
