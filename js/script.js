@@ -14,7 +14,7 @@ window.addEventListener('scroll', function () {
 });
 
 
-// 強みのバブルアニメーション
+// Strengthsのバブルアニメーション
 const bubbles = document.querySelectorAll(".bubble");
 
 bubbles.forEach((bubble) => {
@@ -112,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// 各ページスライドインするアニメーション
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -120,7 +121,7 @@ const observer = new IntersectionObserver((entries, observer) => {
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1 }); // optionsで適切な閾値を設定
+}, { threshold: 0.2 }); // optionsで適切な閾値を設定
 
 // スライドイン対象の要素を取得して監視
 document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(element => {
