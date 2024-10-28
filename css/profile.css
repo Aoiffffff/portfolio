@@ -553,10 +553,6 @@ profile
   margin-bottom: 1%;
 }
 
-.textbox p {
-  line-height: 2.3rem;
-}
-
 @media screen and (max-width: 768px) {
   .flex {
     display: block;
@@ -639,7 +635,7 @@ h2 span {
   hyphens: auto;
   overflow: hidden;
   font-size: clamp(0.75rem, 0.614rem + 0.68vw, 1.125rem);
-  line-height: 3rem;
+  line-height: 2rem;
 }
 
 label {
@@ -864,7 +860,7 @@ Strength
   transform: translate(-50%, -50%);
 }
 
-.textbox p {
+ .text p {
   line-height: 3rem;
   margin-top: 2%;
 }
@@ -905,6 +901,10 @@ Strength
     margin: 0 auto;
     margin-top: 20%;
     margin-bottom: 15%;
+  }
+
+  .text p {
+    line-height: 2rem;
   }
 }
 /* ----------------------------------------------------
@@ -1012,19 +1012,22 @@ contact
 ----------------------------------------------------- */
 footer {
   width: 100%;
-  height: 30vh;
   background-color: #007655;
   color: #ffffff;
+  margin-top: 5%;
 }
 
 footer p {
   font-size: clamp(1.875rem, 1.648rem + 1.14vw, 2.5rem);
   text-align: center;
+  height: 20vh;
+  line-height: 20vh;
 }
 
 footer h2 {
-  margin-bottom: 1%;
+  padding-top: 5%;
   border-bottom: 0;
+  border-bottom: 1px solid #ffffff;
 }
 
 @media screen and (max-width: 768px) {
@@ -1033,6 +1036,5 @@ footer h2 {
     line-height: 10vh;
   }
 }
-
 
 
