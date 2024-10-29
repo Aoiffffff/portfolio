@@ -587,7 +587,7 @@ splide
   left: -5%;
   top: 40%;
   transform: translateY(-50%);
-  z-index: 10; /* 必要に応じて追加 */
+ 
 }
 
 .splide__arrow--next {
@@ -595,7 +595,10 @@ splide
   right: -5%;
   top: 40%;
   transform: translateY(-50%);
-  z-index: 10; /* 必要に応じて追加 */
+}
+
+.splide__arrow--next:hover,.splide__arrow--prev:hover {
+  background-color: #007655;
 }
 
 /*矢印（右に移動して背景がつく）*/
