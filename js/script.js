@@ -128,5 +128,9 @@ document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(element => 
     observer.observe(element);
 });
 
-
-
+var splide = new Splide( '.splide', {
+  rewind:true,
+  pagination:false,
+} );
+  
+  splide.mount();
