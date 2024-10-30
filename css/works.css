@@ -549,8 +549,8 @@ splide
 }
 
 .splide__slide img {
-  width: 50%;
-  height: 50%;
+  width: 800px;
+  height: 500px;
   object-fit: contain;
 }
 
@@ -597,7 +597,7 @@ splide
 }
 
 .splide__arrow--next:hover,.splide__arrow--prev:hover {
-  background-color: #007655;
+  background-color: #dcb002;
 }
 
 /*矢印（右に移動して背景がつく）*/
@@ -623,7 +623,7 @@ splide
 
 
 .arrowbtn-3 a:hover{
-	background:#007655;
+	background:#dcb002;
 	color:#fff;
 }
 
