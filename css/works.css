@@ -545,14 +545,13 @@ splide
 
 .detail {
   width: 80%;
-  /* display: flex; */
   text-align: left;
 }
 
 .splide__slide img {
   width: 50%;
-  height: 40%;
-  object-fit: scale-down;
+  height: 50%;
+  object-fit: contain;
 }
 
 .splide__slide {
@@ -666,9 +665,9 @@ splide
   }
 
   .splide__slide img {
-    width: 100%;
-    height: auto;
-    object-fit: scale-down;
+    width: 500px;
+    height: 300px;
+    object-fit: contain;
   }
 
   .container li {
