@@ -546,6 +546,7 @@ profile
 
 .textbox {
   margin: 5% 2%;
+  line-height: 2rem;
 }
 
 .textbox h2 {
@@ -647,6 +648,10 @@ label {
   transition: transform 0.2s linear;
 }
 
+label:hover {
+  color: #dcb002;
+}
+
 .radio {
   display: none;
 }
@@ -657,7 +662,7 @@ label {
 }
 
 .radio:checked+.relative .circle {
-  background: #007655;
+  background: #dcb002;
 }
 
 .radio:checked~.content {
@@ -671,6 +676,19 @@ label {
   color: #003E2D;
   transition: color 0.3s linear 0.3s;
 }
+
+
+/* 初期状態：▶ */
+.relative label::before {
+  content: "▶";
+  margin-right: 8px;
+}
+
+/* 開いているとき：▼ */
+input[type="radio"]:checked + .relative label::before {
+  content: "▼";
+}
+
 
 @media screen and (max-width: 768px) {
   #timeline {
@@ -967,7 +985,7 @@ favorite
 
 
 .arrowbtn-3 a:hover{
-	background:#007655;
+	background:#dcb002;
 	color:#fff;
 }
 
