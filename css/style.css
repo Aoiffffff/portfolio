@@ -32,21 +32,25 @@ h2 {
   text-indent: 1rem;
 }
 
-#wrap, #contact {
+#wrap,
+#contact {
   margin: 0 10%;
 }
 
-.slide-in-left, .slide-in-right {
+.slide-in-left,
+.slide-in-right {
   opacity: 0;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .slide-in-left {
-  transform: translateX(-30px); /* 左からスライドイン */
+  transform: translateX(-30px);
+  /* 左からスライドイン */
 }
 
 .slide-in-right {
-  transform: translateX(30px); /* 右からスライドイン */
+  transform: translateX(30px);
+  /* 右からスライドイン */
 }
 
 
@@ -60,9 +64,6 @@ loading
   width: 100%;
   height: 100%;
   background-color: #007655;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 9999;
 }
 
@@ -81,153 +82,189 @@ ol {
   left: 50%;
   perspective: 600px;
 }
+
 #ui .dice {
   transform-style: preserve-3d;
 }
+
 #ui .dice:nth-child(1) {
   -webkit-animation: rotate1 20000ms linear infinite;
-          animation: rotate1 20000ms linear infinite;
+  animation: rotate1 20000ms linear infinite;
 }
+
 #ui .dice:nth-child(2) {
   -webkit-animation: rotate2 20000ms linear infinite;
-          animation: rotate2 20000ms linear infinite;
+  animation: rotate2 20000ms linear infinite;
 }
+
 #ui .dice:nth-child(3) {
   -webkit-animation: rotate3 20000ms linear infinite;
-          animation: rotate3 20000ms linear infinite;
+  animation: rotate3 20000ms linear infinite;
 }
+
 #ui .dice_list {
   transform-style: preserve-3d;
   transform: translateY(-75px) translateX(-75px);
 }
+
 #ui .dice_list_item {
   position: absolute;
   width: 150px;
   height: 150px;
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
+
 #ui .dice_list_item:nth-child(1) {
   background: rgba(153, 252, 254, 0.5);
   -webkit-animation: child1 3000ms ease-in-out infinite alternate;
-          animation: child1 3000ms ease-in-out infinite alternate;
+  animation: child1 3000ms ease-in-out infinite alternate;
 }
+
 @-webkit-keyframes child1 {
   0% {
     transform: translateZ(75px);
   }
+
   100% {
     transform: translateZ(-75px);
   }
 }
+
 @keyframes child1 {
   0% {
     transform: translateZ(75px);
   }
+
   100% {
     transform: translateZ(-75px);
   }
 }
+
 #ui .dice_list_item:nth-child(2) {
   background: rgba(232, 104, 225, 0.5);
   -webkit-animation: child2 3000ms ease-in-out infinite alternate;
-          animation: child2 3000ms ease-in-out infinite alternate;
+  animation: child2 3000ms ease-in-out infinite alternate;
 }
+
 @-webkit-keyframes child2 {
   0% {
     transform: translateY(75px) rotateX(270deg);
   }
+
   100% {
     transform: translateY(-75px) rotateX(270deg);
   }
 }
+
 @keyframes child2 {
   0% {
     transform: translateY(75px) rotateX(270deg);
   }
+
   100% {
     transform: translateY(-75px) rotateX(270deg);
   }
 }
+
 #ui .dice_list_item:nth-child(3) {
   background: rgba(185, 173, 138, 0.5);
   -webkit-animation: child3 3000ms ease-in-out infinite alternate;
-          animation: child3 3000ms ease-in-out infinite alternate;
+  animation: child3 3000ms ease-in-out infinite alternate;
 }
+
 @-webkit-keyframes child3 {
   0% {
     transform: translateX(75px) rotateY(-270deg);
   }
+
   100% {
     transform: translateX(-75px) rotateY(-270deg);
   }
 }
+
 @keyframes child3 {
   0% {
     transform: translateX(75px) rotateY(-270deg);
   }
+
   100% {
     transform: translateX(-75px) rotateY(-270deg);
   }
 }
+
 #ui .dice_list_item:nth-child(4) {
   background: rgba(102, 190, 232, 0.5);
   -webkit-animation: child4 3000ms ease-in-out infinite alternate;
-          animation: child4 3000ms ease-in-out infinite alternate;
+  animation: child4 3000ms ease-in-out infinite alternate;
 }
+
 @-webkit-keyframes child4 {
   0% {
     transform: translateX(-75px) rotateY(-90deg);
   }
+
   100% {
     transform: translateX(75px) rotateY(-90deg);
   }
 }
+
 @keyframes child4 {
   0% {
     transform: translateX(-75px) rotateY(-90deg);
   }
+
   100% {
     transform: translateX(75px) rotateY(-90deg);
   }
 }
+
 #ui .dice_list_item:nth-child(5) {
   background: rgba(33, 64, 228, 0.5);
   -webkit-animation: child5 3000ms ease-in-out infinite alternate;
-          animation: child5 3000ms ease-in-out infinite alternate;
+  animation: child5 3000ms ease-in-out infinite alternate;
 }
+
 @-webkit-keyframes child5 {
   0% {
     transform: translateY(-75px) rotateX(90deg);
   }
+
   100% {
     transform: translateY(75px) rotateX(90deg);
   }
 }
+
 @keyframes child5 {
   0% {
     transform: translateY(-75px) rotateX(90deg);
   }
+
   100% {
     transform: translateY(75px) rotateX(90deg);
   }
 }
+
 #ui .dice_list_item:nth-child(6) {
   background: rgba(23, 1, 98, 0.5);
   -webkit-animation: child6 3000ms ease-in-out infinite alternate;
-          animation: child6 3000ms ease-in-out infinite alternate;
+  animation: child6 3000ms ease-in-out infinite alternate;
 }
+
 @-webkit-keyframes child6 {
   0% {
     transform: translateZ(-75px) rotateY(180deg);
   }
+
   100% {
     transform: translateZ(75px) rotateY(180deg);
   }
 }
+
 @keyframes child6 {
   0% {
     transform: translateZ(-75px) rotateY(180deg);
   }
+
   100% {
     transform: translateZ(75px) rotateY(180deg);
   }
@@ -237,6 +274,7 @@ ol {
   0% {
     transform: rotateX(0deg) rotateY(0deg);
   }
+
   100% {
     transform: rotateX(360deg) rotateY(1080deg);
   }
@@ -246,38 +284,47 @@ ol {
   0% {
     transform: rotateX(0deg) rotateY(0deg);
   }
+
   100% {
     transform: rotateX(360deg) rotateY(1080deg);
   }
 }
+
 @-webkit-keyframes rotate2 {
   0% {
     transform: rotateX(0deg) rotateY(0deg) scale3d(0.7, 0.7, 0.7);
   }
+
   100% {
     transform: rotateX(360deg) rotateY(1080deg) scale3d(0.7, 0.7, 0.7);
   }
 }
+
 @keyframes rotate2 {
   0% {
     transform: rotateX(0deg) rotateY(0deg) scale3d(0.7, 0.7, 0.7);
   }
+
   100% {
     transform: rotateX(360deg) rotateY(1080deg) scale3d(0.7, 0.7, 0.7);
   }
 }
+
 @-webkit-keyframes rotate3 {
   0% {
     transform: rotateX(0deg) rotateY(0deg) scale3d(0.4, 0.4, 0.4);
   }
+
   100% {
     transform: rotateX(360deg) rotateY(1080deg) scale3d(0.4, 0.4, 0.4);
   }
 }
+
 @keyframes rotate3 {
   0% {
     transform: rotateX(0deg) rotateY(0deg) scale3d(0.4, 0.4, 0.4);
   }
+
   100% {
     transform: rotateX(360deg) rotateY(1080deg) scale3d(0.4, 0.4, 0.4);
   }
@@ -296,7 +343,8 @@ nav
   top: 0;
   left: 0;
   z-index: 1000;
-  transition: all 0.3s ease; /* アニメーションを追加 */
+  transition: all 0.3s ease;
+  /* アニメーションを追加 */
 }
 
 /* hoverアニメーション */
@@ -337,7 +385,8 @@ nav
 
 /* ハンバーガーメニューのスタイル */
 #hamburger {
-  display: none; /* 768px以上では非表示 */
+  display: none;
+  /* 768px以上では非表示 */
   font-size: 2rem;
   color: #003E2D;
   padding: 0.5rem 0.7rem 0.7rem 0.7rem;
@@ -345,23 +394,28 @@ nav
   position: fixed;
   right: 1rem;
   top: 1rem;
-  border-radius: 5px; /* 四角の背景 */
-  transition: all 0.3s ease; /* アニメーション */
+  border-radius: 5px;
+  /* 四角の背景 */
+  transition: all 0.3s ease;
+  /* アニメーション */
 }
 
 /* 768px以下のレスポンシブデザイン */
 @media screen and (max-width: 768px) {
+
   /* ナビゲーションバー非表示 */
   #menu li {
     display: none;
   }
 
   #nav {
-    display: block; /* 768px以下では常に表示 */
+    display: block;
+    /* 768px以下では常に表示 */
   }
 
   #hamburger {
-    display: block; /* ハンバーガーメニューアイコンを常に表示 */
+    display: block;
+    /* ハンバーガーメニューアイコンを常に表示 */
     background-color: #ffffffc7;
     border-radius: 2px;
   }
@@ -380,7 +434,8 @@ nav
     width: 100vw;
     z-index: 1000;
     opacity: 0;
-    animation: fadeIn 0.5s forwards; /* メニューがフェードインするアニメーション */
+    animation: fadeIn 0.5s forwards;
+    /* メニューがフェードインするアニメーション */
   }
 
   #nav.show li {
@@ -392,15 +447,16 @@ nav
   }
 
 
-/* フェードインアニメーション */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+  /* フェードインアニメーション */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
-  to {
-    opacity: 1;
-  }
-}
 }
 
 /* ----------------------------------------------------
@@ -420,20 +476,24 @@ header .pc {
   position: relative;
 }
 
-.top-ttl{
+.top-ttl {
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute; /* 子要素を絶対配置に */
-  top: 50%;           /* 画像の縦中央に配置 */
-  left: 35%;          /* 画像の横中央に配置 */
-  transform: translate(-50%, -50%); /* 中央揃えのための調整 */
+  position: absolute;
+  /* 子要素を絶対配置に */
+  top: 50%;
+  /* 画像の縦中央に配置 */
+  left: 35%;
+  /* 画像の横中央に配置 */
+  transform: translate(-50%, -50%);
+  /* 中央揃えのための調整 */
 }
 
-.textanimation{
+.textanimation {
   font-size: clamp(2.5rem, 1.136rem + 6.82vw, 6.25rem);
   /* background: linear-gradient(90deg, #007655 0%, #ffffff 40%, #ffffff 80%);
   -webkit-background-clip: text;
@@ -443,33 +503,36 @@ header .pc {
   color: #f3f3f3;
   margin-bottom: 3%;
 }
-@keyframes showTextFromBottom{
-0% {
-transform:translateY( 100% );
- }
-100% {
-transform:translateY( 0px );
- }
-}
-.textanimation span{
-animation: showText  backwards;
-display: inline-block;
+
+@keyframes showTextFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-.textanimation > span{
-overflow: hidden;
+.textanimation span {
+  animation: showText backwards;
+  display: inline-block;
 }
 
-.textanimation > span > span{
-animation: showTextFromBottom 0.5s backwards;
+.textanimation>span {
+  overflow: hidden;
+}
+
+.textanimation>span>span {
+  animation: showTextFromBottom 0.5s backwards;
 }
 
 @media screen and (max-width: 768px) {
-  .top-ttl{
+  .top-ttl {
     left: 45%;
   }
 
-  .pc  {
+  .pc {
     display: none;
   }
 
@@ -506,62 +569,64 @@ Works
 .wrapper img {
   margin-bottom: 5%;
   width: 500px;
-  height: auto;
+  height: 300px;
   object-fit: contain;
 }
 
 .wrapper img:hover {
-  transform:scale(1.1);
-  transition:1s all;
+  transform: scale(1.1);
+  transition: 1s all;
 }
 
 /*矢印（右に移動して背景がつく）*/
-.arrowbtn-3 a{
-	--arrow-color: #333;
-	position: relative;
-	border: 1px solid var(--arrow-color);
-	color: var(--arrow-color);
-	text-decoration: none;
-	padding: 8px 30px;
-	display: inline-block;
-	text-align: center;
-	transition: all .2s linear;
+.arrowbtn-3 a {
+  --arrow-color: #333;
+  position: relative;
+  border: 1px solid var(--arrow-color);
+  color: var(--arrow-color);
+  text-decoration: none;
+  padding: 8px 30px;
+  display: inline-block;
+  text-align: center;
+  transition: all .2s linear;
 }
 
 .arrowbtn-3 {
   margin-right: 10%;
   margin-top: 10%;
   display: block;
-    margin-left: auto;
-    width: fit-content; /* 必要に応じて追加 */
+  margin-left: auto;
+  width: fit-content;
+  /* 必要に応じて追加 */
 }
 
 
-.arrowbtn-3 a:hover{
-	background:#007655;
-	color:#fff;
+.arrowbtn-3 a:hover {
+  background: #dcb002;
+  color: #fff;
 }
 
 .arrowbtn-3 a::before {
-	border-bottom: 1px solid var(--arrow-color);
-	border-right: 1px solid var(--arrow-color);
-	content: '';
-	height: 10px;
-	position: absolute;
-	top:calc(50% - 10px);
-	right:-20px;
-	transform: skewX(50deg);
-	width:40px;
-	transition: all .3s; /*なめらかな動き*/
+  border-bottom: 1px solid var(--arrow-color);
+  border-right: 1px solid var(--arrow-color);
+  content: '';
+  height: 10px;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: -20px;
+  transform: skewX(50deg);
+  width: 40px;
+  transition: all .3s;
+  /*なめらかな動き*/
 }
 
 /*hoverした際の移動*/
 .arrowbtn-3 a:hover::before {
-	right:-25px;
+  right: -25px;
 }
 
 @media screen and (max-width: 768px) {
-   #wks {
+  #wks {
     display: block;
   }
 
@@ -582,32 +647,39 @@ Skills
 /* 横並び */
 .skl {
   display: flex;
-  justify-content: space-between; /* 均等にスペースを入れる */
+  justify-content: space-between;
+  /* 均等にスペースを入れる */
   gap: 5%;
 }
 
 .container {
-  flex: 1 1 calc(100% / 3); /* 3分割 */
-  padding: 10px; /* 内側に余白をつける */
-  text-align: center; /* 中央揃え */
+  flex: 1 1 calc(100% / 3);
+  /* 3分割 */
+  padding: 10px;
+  /* 内側に余白をつける */
+  text-align: center;
+  /* 中央揃え */
   background-color: #ffffff;
   box-shadow: 13px 12px 31px -2px #777777;
-border-radius: 10px;
+  border-radius: 10px;
 }
 
 /* 画像の大きさを統一する */
 .container img {
-  width: 100%; /* 親要素の幅に合わせて拡大縮小 */
+  width: 100%;
+  /* 親要素の幅に合わせて拡大縮小 */
   max-width: 250px;
   height: auto;
   display: block;
-  margin: 0 auto; /* 画像を中央に配置 */
+  margin: 0 auto;
+  /* 画像を中央に配置 */
 }
 
 .container p {
   text-align: left;
   margin: 3% 0;
-  word-wrap: break-word; /* テキストがはみ出さないように自動で改行 */
+  word-wrap: break-word;
+  /* テキストがはみ出さないように自動で改行 */
   padding: 0 5%;
   font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
   line-height: 1.5rem;
@@ -622,6 +694,7 @@ border-radius: 10px;
     margin: 20% 10%;
   }
 }
+
 /* ----------------------------------------------------
 contact
 ----------------------------------------------------- */
@@ -647,8 +720,7 @@ footer h2 {
 
 @media screen and (max-width: 768px) {
   footer p {
-    height:10vh;
+    height: 10vh;
     line-height: 10vh;
   }
 }
-
